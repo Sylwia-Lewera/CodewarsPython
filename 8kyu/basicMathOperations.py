@@ -22,5 +22,5 @@ def basic_op(operator, value1, value2):
             case '/':
                 return value1 / value2
             
-    except (ArithmeticError, ZeroDivisonError):
+    except (ArithmeticError, ZeroDivisionError):
         print('Invalid data provided')
