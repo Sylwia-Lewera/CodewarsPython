@@ -20,26 +20,14 @@ def first_n_smallest(arr, n):
     temp = arr.copy()
     result = []
     while n > 0:
-        smallest = min(arr)
-        print('smallest element = ', smallest)
-        indexes = [i for i in range(len(temp)) if temp[i] == smallest] 
-        print('indexes of smallest:', indexes)
+        smallest = min(arr) # find smallest element, can ooccur multiple times
+        indexes = [i for i in range(len(temp)) if temp[i] == smallest] # saving order of smallest values
         for idx in indexes:
             if n > 0:
-                smallestElements[idx] = smallest
-                del arr[idx]
+                smallestElements[idx] = smallest #creating dictionary with smallest elements and their order
+                arr.remove(smallest) #removing smallest elements of specified value
                 n -= 1
-
-
-    print('Smallest elements:', smallestElements)
-    sortedByOrder = dict(sorted(smallestElements.items()))
-    print('Sorted order:', sortedByOrder)
+    sortedByOrder = dict(sorted(smallestElements.items())) # sorting n smallest elements in their original order
     for key, value in sortedByOrder.items():
-        print('add to results')
-        result.append(value)
+        result.append(value) # adding smallest elements values to the results list in original order
     return result
-
-print(first_n_smallest([1,2,3,4,5],3))
-
-arrRand = [10, 4, -6, 9, 4, -8, -2, -4, 6, -8, 10, -8, -4, 10, -9, 3, 6, 6, 1, 6, 9, 5, -2, 0, 1, 2, -2, -2, -10, 9, 2, -7, -1, 10, 3, 7, -5]
-print('len of rand array: ', len(arrRand))
