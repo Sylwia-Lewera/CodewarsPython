@@ -45,3 +45,8 @@ def solution(start, finish):
 
         jumpsTotal += 1
     return jumpsTotal
+
+"""
+improve with divmode function
+return sum(divmod(finish - start,3))
+"""
