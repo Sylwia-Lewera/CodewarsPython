@@ -1,5 +1,4 @@
-myDict = {}
-myDict["key1"] = [1, 2]
-myDict["key2"] = ["Geeks", "For", "Geeks"] 
-for item in myDict:
-    print(myDict[item])
+
+num = 9119
+numbers = ''.join( [(str(int(x) ** 2)) for x in str(num)])
+print(numbers)
